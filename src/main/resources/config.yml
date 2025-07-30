@@ -1,0 +1,183 @@
+# MCAntiPools Configuration File
+# Version: 2.1.3
+# 
+# This plugin prevents Mojang API rate limiting issues (HTTP 429)
+# that cause player disconnections and server lag
+
+# General Settings
+general:
+  # Enable debug mode for detailed logging
+  debug: false
+  
+  # Language for messages (en, es, fr, de, pt, ru, zh)
+  language: "en"
+  
+  # Check for plugin updates on startup
+  update-checker: true
+  
+  # Plugin prefix for messages
+  prefix: "&8[&6MCAntiPools&8]&r "
+
+# Rate Limiting Protection
+rate-limiting:
+  # Enable rate limiting protection
+  enabled: true
+  
+  # Maximum requests per minute to Mojang API
+  max-requests-per-minute: 600
+  
+  # Cooldown between requests (in milliseconds)
+  request-cooldown: 100
+  
+  # Enable smart queuing system
+  smart-queuing: true
+  
+  # Maximum queue size per pool
+  max-queue-size: 50
+  
+  # Request timeout (in seconds)
+  request-timeout: 10
+
+# Connection Pool Settings
+connection-pools:
+  # Enable connection pooling
+  enabled: true
+  
+  # Number of connection pools
+  pool-count: 3
+  
+  # Maximum connections per pool
+  max-connections-per-pool: 20
+  
+  # Connection pool timeout (in seconds)
+  pool-timeout: 30
+  
+  # Enable pool rotation
+  rotate-pools: true
+  
+  # Pool rotation interval (in seconds)
+  rotation-interval: 300
+
+# Caching System
+caching:
+  # Enable player data caching
+  enabled: true
+  
+  # Cache type: MEMORY, REDIS, DATABASE
+  cache-type: "MEMORY"
+  
+  # Cache expiration time (in minutes)
+  cache-expiration: 30
+  
+  # Maximum cache size (entries)
+  max-cache-size: 10000
+  
+  # Redis settings (if using REDIS cache)
+  redis:
+    host: "localhost"
+    port: 6379
+    password: ""
+    database: 0
+    timeout: 5000
+
+# Database Settings
+database:
+  # Enable database storage
+  enabled: false
+  
+  # Database type: MYSQL, POSTGRESQL, SQLITE
+  type: "SQLITE"
+  
+  # Connection settings
+  host: "localhost"
+  port: 3306
+  database: "mcantipools"
+  username: "root"
+  password: ""
+  
+  # Connection pool settings
+  pool-size: 10
+  max-lifetime: 1800000
+  connection-timeout: 5000
+
+# Monitoring & Analytics
+monitoring:
+  # Enable monitoring
+  enabled: true
+  
+  # Collect detailed statistics
+  detailed-stats: true
+  
+  # Stats collection interval (in seconds)
+  stats-interval: 60
+  
+  # Enable performance metrics
+  performance-metrics: true
+  
+  # Log rate limit hits
+  log-rate-limits: true
+
+# Player Protection
+player-protection:
+  # Enable automatic retry on failed connections
+  auto-retry: true
+  
+  # Maximum retry attempts
+  max-retries: 3
+  
+  # Retry delay (in seconds)
+  retry-delay: 5
+  
+  # Enable graceful degradation
+  graceful-degradation: true
+  
+  # Fallback to cached data when API is unavailable
+  use-cache-fallback: true
+
+# Advanced Settings
+advanced:
+  # Custom user agent for requests
+  user-agent: "MCAntiPools/2.1.3"
+  
+  # Enable request compression
+  compression: true
+  
+  # Custom DNS servers (comma-separated)
+  dns-servers: ""
+  
+  # Enable IPv6 support
+  ipv6-support: false
+  
+  # Thread pool size for async operations
+  thread-pool-size: 4
+
+# Notifications
+notifications:
+  # Notify admins of rate limit issues
+  notify-admins: true
+  
+  # Notification methods: CHAT, ACTIONBAR, TITLE, CONSOLE
+  notification-methods:
+    - "CHAT"
+    - "CONSOLE"
+  
+  # Notification cooldown (in seconds)
+  notification-cooldown: 300
+
+# Integration Settings
+integrations:
+  # PlaceholderAPI support
+  placeholderapi: true
+  
+  # Metrics (bStats)
+  metrics: true
+  
+  # Discord webhook notifications
+  discord:
+    enabled: false
+    webhook-url: ""
+    
+  # Slack notifications
+  slack:
+    enabled: false
+    webhook-url: ""
