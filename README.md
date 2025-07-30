@@ -64,28 +64,11 @@ MCAntiPools eliminates **HTTP 429 rate limiting issues** that cause:
 4. You're done, no need in doing config checks, weird commands.
 5. MCAntiPools will start working **when it detects pool saturation**.
 
-## ⚙️ Configuration
+## ⚙️ Current issues!
 
 > [!WARNING]
 > Some users reported sometimes the config doesn't automatically appear.
 > Don't worry, the plugin **WILL STILL WORK** and **doesn't need** HUMAN INTERVENTION.
-
-```yaml
-# Basic settings
-connection-pools:
-  enabled: true
-  pool-count: 3
-  max-connections-per-pool: 20
-
-rate-limiting:
-  max-requests-per-minute: 600
-  smart-queuing: true
-
-caching:
-  enabled: true
-  cache-type: "MEMORY"  # MEMORY, REDIS, DATABASE
-  cache-expiration: 30
-```
 
 ## 🔗 Integrations *(SOON)*
 
