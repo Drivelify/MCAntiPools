@@ -20,6 +20,7 @@ MCAntiPools eliminates **HTTP 429 rate limiting issues** that cause:
 - ❌ Login failures 
 - ❌ Sudden lag spikes
 - ❌ Session validation timeouts
+- ❌ Server crashes
 
 **PoolSync's Solution** *(us)*: Intelligent connection pooling, smart request queuing, and advanced caching.
 
